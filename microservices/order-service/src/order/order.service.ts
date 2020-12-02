@@ -17,18 +17,18 @@ export class OrderService {
   }
 
   findAll() {
-    return `This action returns all order`;
+    return this.model.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} order`;
+  async findOne(id: string) {
+    return await this.model.findById(id);
   }
 
-  update(id: number, updateOrderDto: UpdateOrderDto) {
-    return `This action updates a #${id} order`;
+  async update(id: string, updateOrderDto: UpdateOrderDto) {
+    return await this.model.findByIdAndUpdate(id, updateOrderDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} order`;
+  remove(id: string) {
+    return this.model.findByIdAndRemove(id);
   }
 }
