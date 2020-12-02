@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-// import { Transport } from '@nestjs/common/enums/transport.enum';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { MongooseModule } from '@nestjs/mongoose';
 import { order_host } from '../config';
