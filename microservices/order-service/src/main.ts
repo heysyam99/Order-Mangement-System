@@ -1,6 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { Transport } from '@nestjs/microservices';
+import { AllExceptionsFilter } from './AllExceptionsFilter';
 import { AppModule } from './app.module';
 
 import { order_host } from './config';
@@ -20,6 +21,7 @@ async function bootstrap() {
 
   // Setup order module
   app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalFilters(new AllExceptionsFilter());
   app.setGlobalPrefix('api');
   app.enableCors();
 
