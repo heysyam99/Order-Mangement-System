@@ -5,6 +5,7 @@ import { order_host } from '../config';
 import { OrderSchema } from './entities/order.entity';
 import { OrderController } from './order.controller';
 import { OrderService } from './order.service';
+import { OrderGateway } from './order.gateway';
 
 @Module({
   imports: [
@@ -21,6 +22,6 @@ import { OrderService } from './order.service';
     MongooseModule.forFeature([{ name: 'Order', schema: OrderSchema }]),
   ],
   controllers: [OrderController],
-  providers: [OrderService],
+  providers: [OrderService, OrderGateway],
 })
 export class OrderModule {}
