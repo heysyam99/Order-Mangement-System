@@ -15,7 +15,7 @@ export class Order {
   @Prop({ required: true, enum: STATUS })
   status: string;
 
-  @Prop({ required: true })
+  @Prop()
   transactionID: string;
 
   @Prop({ type: Date, default: Date.now, immutable: true })
